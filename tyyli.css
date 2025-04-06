@@ -1,0 +1,91 @@
+:root {
+    --paavari:#ff0000d8;
+    --tekstivari:#d1d0d0;
+    --taustavari:black;
+    --painiketausta:#988688;
+    --painiketeksti:#6c0303;
+}
+
+body {
+    background-color: var(--taustavari);
+    color:var(--tekstivari);
+    font-family: "Iceland", serif;
+    font-size: 20px;
+    padding: 40px
+    }
+
+    header, h2, h3, figure {text-align: center;}
+
+h1 {
+    font-family: "Metal Mania", serif;
+    color:var(--paavari);
+    font-size: 55px;
+    cursor: pointer;
+    }
+
+#topnav li {
+    flex:1;
+        max-width:150px;
+        text-align:center;
+        align-items: center;
+        padding: 10px 10px 0px 10px;
+        background-color:var(--painiketausta);
+        height: 55px;
+        width: 150px;
+        border-radius: 12px;
+
+
+    }
+
+#topnav ul {
+        display: flex;
+        justify-content:center;
+        gap:10px;
+        padding-left: 0px;
+        align-items: center;
+        list-style:none;
+        }
+
+#topnav a {text-decoration: none;
+        color:var(--painiketeksti);
+        font-family:"Metal Mania", serif;
+        font-size: 33px;
+        cursor: pointer;
+    }
+
+        
+.container 
+{
+    display: flex;
+    align-items: center;
+    width: 75%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius:20px;
+
+  }
+
+footer {text-align: center;
+        font-size: 15px}
+
+/*mobiili*/
+@media only screen and (max-width: 440px)
+{
+    .flex_container {display: flex;}
+}
+
+/* medium näytöt*/
+@media only screen and (min-width: 441px)
+{
+    .flex_container {display: flex;}
+}
+
+/*isot näytöt*/
+@media only screen and (min-width: 1200px)
+{
+    .flex_container {display: flex;}
+}
