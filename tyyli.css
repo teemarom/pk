@@ -14,7 +14,7 @@ body {
     padding: 40px
     }
 
-    header, h2, h3, figure {text-align: center;}
+header, h2, h3, figure {text-align: center;}
 
 h1 {
     font-family: "Metal Mania", serif;
@@ -22,6 +22,11 @@ h1 {
     font-size: 55px;
     cursor: pointer;
     }
+
+h1 a {
+    color: inherit;
+    text-decoration: none;
+  }
 
 #topnav li {
     flex:1;
@@ -60,6 +65,32 @@ h1 {
     align-items: center;
     width: 75%;
 }
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  .text-container {
+    flex: 1 1 300px;
+  }
+
+  .map-container {
+    flex: 2 1 400px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .map-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
 
 img {
     width: 100%;
