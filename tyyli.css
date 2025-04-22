@@ -110,12 +110,18 @@ footer {text-align: center;
 @media only screen and (max-width: 440px)
 {
     .flex_container {display: flex;}
+    
+    #topnav li {
+        transform: scale(0.67);
+        transform-origin: center;
+    }
 }
 
 /* medium näytöt*/
 @media only screen and (min-width: 441px)
 {
     .flex_container {display: flex;}
+
 }
 
 /*isot näytöt*/
