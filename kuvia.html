@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <meta name="author" content="Teemu">
-    <meta name="description" content="Tietoa parkourista: lajin perusteet, tekniikat, historia ja vinkit aloittelijoille.">
+    <meta name="description" content="Kuvia Suomalaisesta parkour kulttuurista">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 </head>
 <body>
     <header>
-        <h1><a href='index.html'>PARKOUR</h1>
+        <h1><a href='index.html'>PARKOUR</a></h1>
         
         <nav id="topnav">
             <ul>
@@ -38,12 +38,70 @@
     </header>
 
     <main>
-    <h2>Huutista niin maan berkeleesti</h1>
-    <p>kuvia</p>
-
-    </main>
-    <footer>
+    <h2>Kuvia Suomalaisesta Parkour kulttuurista</h2>
+    <p>Kuvat by: <a href="https://www.instagram.com/whoiswessu/"> @whoiswessu</a> & <a href="https://www.instagram.com/miikataja/"> @miikataja</a></p>
+    <div class="flexbox-kuvat">
+        <img src="kuvia1.png" alt="kuvia1" class="gallery-image">
+        <img src="kuvia2.png" alt="kuvia2" class="gallery-image">
+        <img src="kuvia3.png" alt="kuvia3" class="gallery-image">
+        <img src="kuvia4.png" alt="kuvia4" class="gallery-image">
+        <img src="kuvia5.png" alt="kuvia5" class="gallery-image">
+        <img src="kuvia6.png" alt="kuvia6" class="gallery-image">
+        <img src="kuvia7.png" alt="kuvia7" class="gallery-image">
+        <img src="kuvia8.png" alt="kuvia8" class="gallery-image">
+        <img src="kuvia9.png" alt="kuvia9" class="gallery-image">
+        <img src="kuvia10.png" alt="kuvia10" class="gallery-image">
+      </div>
     
-    </footer>
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" class="lightbox-content" id="lightbox-img" alt="Suurempi kuva galleriasta">
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+    </main>
+    <script>
+        const images = document.querySelectorAll('.gallery-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        let currentIndex = 0;
+
+        function showLightbox(index) {
+        currentIndex = index;
+        lightbox.style.display = 'flex';
+        lightboxImg.src = images[currentIndex].src;
+        lightboxImg.style.maxWidth = '90%'; 
+        lightboxImg.style.maxHeight = '90vh';
+        }
+
+        images.forEach((img, index) => {
+        img.addEventListener('click', () => showLightbox(index));
+        });
+
+        closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        });
+
+        prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+        });
+
+        nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+        });
+
+        window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            lightbox.style.display = 'none';
+        }
+    });
+    </script>
 </body>
 </html>
