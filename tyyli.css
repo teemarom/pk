@@ -80,6 +80,53 @@ h1 a:visited {
     margin-top: 1rem;
   }
 
+/* historia */
+.flexbox-historia {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.historiatxt {
+  flex: 2;
+  min-width: 300px;
+}
+
+.historiaKuva {
+  flex: 1;
+  min-width: 250px;
+  align-self: stretch;
+}
+
+.historiaKuva img {
+  width: 100%;
+  height: 100%;
+}
+
+.flexbox-suomi {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.suomiKuva {
+  flex: 1;
+  min-width: 250px;
+}
+
+.suomiKuva img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.suomiTeksti {
+  flex: 2;
+  min-width: 300px;
+}
 
 /*kuvia*/
 .flexboxkuvat {
@@ -188,8 +235,6 @@ footer {text-align: center;
 /*mobiili*/
 @media only screen and (max-width: 440px)
 {
-    .flex_container {display: flex;}
-    
     #topnav li {
         transform: scale(0.65);
         transform-origin: center;
@@ -199,17 +244,45 @@ footer {text-align: center;
         gap:0;
         padding:0;
     }
+
+    .historiaKuva {
+      display: none;
+    }
+    
+    .suomiKuva {
+      display:none;
+    }
+    
 }
+
+
 
 /* medium näytöt*/
 @media only screen and (min-width: 441px)
 {
-    .flex_container {display: flex;}
-
+    .historiaKuva {
+      display: none;
+    }
+    
+    .suomiKuva {
+      display:none;
+    }
 }
 
+
+
+
 /*isot näytöt*/
-@media only screen and (min-width: 1200px)
-{
-    .flex_container {display: flex;}
+@media only screen and (min-width: 1199px) {
+  .flex_container {
+      display: flex;
+  }
+
+  .historiaKuva {
+      display: block;
+  }
+
+  .suomiKuva {
+      display: block;
+  }
 }
